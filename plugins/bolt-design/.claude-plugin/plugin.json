@@ -1,0 +1,6 @@
+{
+  "name": "bolt-design",
+  "description": "Diseño técnico: arquitectura, DDD, ADR, plan, tasks, Gherkin, contratos API y consistencia de artefactos.",
+  "version": "0.1.0",
+  "author": { "name": "Bolt Framework" }
+}

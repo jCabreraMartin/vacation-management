@@ -1,0 +1,6 @@
+{
+  "name": "bolt-operations",
+  "description": "Producción: operaciones, monitorización, mejora continua y postmortems.",
+  "version": "0.1.0",
+  "author": { "name": "Bolt Framework" }
+}

@@ -1,0 +1,16 @@
+# Bolt Framework — plugin selection state
+# Managed by `bolt plugin` (Invoke-BoltPlugin.ps1 / bolt-plugin.sh). No editar a mano.
+version: 1
+updated: 2026-10-26T12:21:06Z
+installed:
+  - bolt-analysis
+  - bolt-backend
+  - bolt-cloud-platform
+  - bolt-design
+  - bolt-development
+  - bolt-foundation
+  - bolt-frontend
+  - bolt-maintenance
+  - bolt-operations
+  - bolt-release
+  - bolt-work-management

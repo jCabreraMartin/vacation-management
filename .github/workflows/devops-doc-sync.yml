@@ -1,0 +1,94 @@
+name: DevOps Documentation Governance
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, edited, ready_for_review]
+  schedule:
+    - cron: '40 8 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  sync:
+    name: Propose DevOps documentation sync
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    concurrency:
+      group: devops-documentation-sync
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          persist-credentials: false
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+      - run: npm install --ignore-scripts --no-package-lock
+      - run: npm run docs:devops:sync
+      - name: Propose generated inventory changes for review
+        env:
+          GH_TOKEN: ${{ secrets.DEVOPS_DOC_SYNC_TOKEN || github.token }}
+          GH_REPO: ${{ github.repository }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- .github/workflows/README.md; then
+            echo 'Generated inventory is current.' >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          EXISTING=$(gh pr list --base "$DEFAULT_BRANCH" --state open --json headRefName,url \
+            --jq '.[] | select(.headRefName | startswith("docs/devops-sync-")) | .url')
+          if [ -n "$EXISTING" ]; then
+            echo "Resolve existing sync PR before retrying: $EXISTING" | tee -a "$GITHUB_STEP_SUMMARY"
+            exit 1
+          fi
+          BRANCH="docs/devops-sync-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+          git switch -c "$BRANCH"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add .github/workflows/README.md
+          git commit -m 'docs(US-007): synchronize generated workflow inventory'
+          gh auth setup-git
+          git push origin "$BRANCH"
+          if ! gh pr create --base "$DEFAULT_BRANCH" --head "$BRANCH" \
+            --title 'docs(US-007): synchronize DevOps workflow inventory' \
+            --body 'Refs US-007, Azure Boards AB#37993. Generated inventory changed. Owner must review narrative catalog completeness, delivery guide, runbook, agents guide, and review deadlines. No runtime deployment; rollback is a documentation revert. Verify required checks ran on this SHA; GITHUB_TOKEN-created PRs may need a human update or approved App token. No GitHub issue mapping is confirmed; the story scope is temporary under repository policy. See docs/devops-governance.md.'; then
+            echo "PR creation failed. Check Actions PR permissions or DEVOPS_DOC_SYNC_TOKEN. Open https://github.com/${GH_REPO}/compare/${DEFAULT_BRANCH}...${BRANCH}" | tee -a "$GITHUB_STEP_SUMMARY"
+            exit 1
+          fi
+
+  governance:
+    name: DevOps documentation governance
+    if: always()
+    needs: [sync]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+      - run: npm install --ignore-scripts --no-package-lock
+      - run: npm run docs:devops:test
+      - name: Validate catalog, ownership, cadence, and change evidence
+        env:
+          PR_BASE: ${{ github.event.pull_request.base.sha }}
+        run: |
+          if [ -n "$PR_BASE" ]; then
+            npm run docs:devops:check -- --base "$PR_BASE"
+          else
+            npm run docs:devops:check
+          fi
+      - name: Require successful sync proposal when applicable
+        if: always() && github.event_name != 'pull_request' && needs.sync.result != 'success'
+        run: |
+          echo 'Sync proposal failed. Inspect its logs and resolve the drift or permission failure.'
+          exit 1

@@ -1,0 +1,83 @@
+name: '🔁 GitHub Issues → Azure Boards'
+
+# Daily: migrates open GitHub issues to Azure DevOps Boards work items, then labels and closes them.
+# Manual: dry runs, specific issues, or the one-off historical migration of closed issues (issue_state=closed|all).
+
+on:
+  schedule:
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Only report what would be migrated (no writes)'
+        type: boolean
+        default: false
+      issue_state:
+        description: 'GitHub issues to migrate'
+        type: choice
+        options: [open, closed, all]
+        default: open
+      issue_numbers:
+        description: 'Optional comma-separated issue numbers (overrides issue_state)'
+        type: string
+        default: ''
+      max_issues:
+        description: 'Maximum issues per run'
+        type: string
+        default: '100'
+
+concurrency:
+  group: github-issues-to-azure-boards
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  migrate:
+    name: 'Migrate issues to Azure Boards'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          sparse-checkout: .github/scripts
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Migrate, validate and close issues
+        env:
+          GH_TOKEN: ${{ github.token }}
+          AZDO_PAT: ${{ secrets.AZDO_PAT }}
+          AZDO_ORG_URL: ${{ vars.AZDO_ORG_URL }}
+          AZDO_PROJECT: ${{ vars.AZDO_PROJECT }}
+          AZDO_WORK_ITEM_TYPE: ${{ vars.AZDO_WORK_ITEM_TYPE }}
+          AZDO_AREA_PATH: ${{ vars.AZDO_AREA_PATH }}
+          AZDO_ITERATION_PATH: ${{ vars.AZDO_ITERATION_PATH }}
+          AZDO_PARENT_ID: ${{ vars.AZDO_PARENT_ID }}
+          AZDO_CLOSED_STATE: ${{ vars.AZDO_CLOSED_STATE }}
+          AZDO_REMOVED_STATE: ${{ vars.AZDO_REMOVED_STATE }}
+          AZDO_USER_MAP: ${{ vars.AZDO_USER_MAP }}
+          EXCLUDE_LABELS: ${{ vars.AZDO_SYNC_EXCLUDE_LABELS }}
+          DRY_RUN: ${{ inputs.dry_run }}
+          ISSUE_STATE: ${{ inputs.issue_state }}
+          ISSUE_NUMBERS: ${{ inputs.issue_numbers }}
+          MAX_ISSUES: ${{ inputs.max_issues }}
+          REPORT_PATH: migration-report.json
+        run: |
+          if [ -z "$AZDO_PAT" ]; then
+            echo "::error::Create the repository secret AZDO_PAT (scope: Work Items Read & write)."
+            exit 1
+          fi
+          python .github/scripts/github_issues_to_azure_boards.py
+
+      - name: Upload migration report
+        if: always() && hashFiles('migration-report.json') != ''
+        uses: actions/upload-artifact@v5
+        with:
+          name: azure-boards-migration-report-${{ github.run_id }}
+          path: migration-report.json
+          retention-days: 90

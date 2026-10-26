@@ -1,0 +1,7 @@
+{
+  "name": "bolt-development",
+  "description": "Construcción y verificación: implement, TDD, review, testing, seguridad, regresión, BDD y E2E con Playwright.",
+  "version": "0.1.0",
+  "author": { "name": "Bolt Framework" },
+  "dependencies": ["bolt-design"]
+}

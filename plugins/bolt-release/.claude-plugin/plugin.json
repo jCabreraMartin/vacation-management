@@ -1,0 +1,6 @@
+{
+  "name": "bolt-release",
+  "description": "Transición a producción: releases, CI/CD y GitHub Actions.",
+  "version": "0.1.0",
+  "author": { "name": "Bolt Framework" }
+}

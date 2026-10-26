@@ -1,0 +1,53 @@
+{
+  "documents": [
+    {
+      "path": "docs/AGENTS_GUIDE.md",
+      "owner": "@ava-group-iberiademos/boltf-smes",
+      "reviewEveryDays": 30,
+      "reviewOnWorkflowChange": true,
+      "lastReviewed": "2026-10-16"
+    },
+    {
+      "path": "docs/devops-governance.md",
+      "owner": "@ava-group-iberiademos/boltf-smes",
+      "reviewEveryDays": 90,
+      "reviewOnWorkflowChange": true,
+      "lastReviewed": "2026-10-16"
+    },
+    {
+      "path": ".github/workflows/README.md",
+      "owner": "@ava-group-iberiademos/boltf-smes",
+      "reviewEveryDays": 30,
+      "reviewOnWorkflowChange": true,
+      "lastReviewed": "2026-10-16"
+    },
+    {
+      "path": "docs/delivery-flow.md",
+      "owner": "@ava-group-iberiademos/boltf-smes",
+      "reviewEveryDays": 30,
+      "reviewOnWorkflowChange": true,
+      "lastReviewed": "2026-10-16"
+    },
+    {
+      "path": "docs/release-operations-runbook.md",
+      "owner": "@ava-group-iberiademos/boltf-smes",
+      "reviewEveryDays": 30,
+      "reviewOnWorkflowChange": true,
+      "lastReviewed": "2026-10-16"
+    },
+    {
+      "path": ".boltf/docs/branching-strategy.md",
+      "owner": "@ava-group-iberiademos/boltf-smes",
+      "reviewEveryDays": 90,
+      "reviewOnWorkflowChange": true,
+      "lastReviewed": "2026-10-16"
+    },
+    {
+      "path": "docs/adr/ADR-002-devops-documentation-governance.md",
+      "owner": "@ava-group-iberiademos/boltf-smes",
+      "reviewEveryDays": 90,
+      "reviewOnWorkflowChange": true,
+      "lastReviewed": "2026-10-16"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "name": "bolt-foundation",
+  "description": "Núcleo transversal de Bolt Framework: orquestador, constitution, status, provisioner, templates, quality gates, git/GitHub, mermaid y markdown.",
+  "version": "0.2.0",
+  "author": { "name": "Bolt Framework" }
+}

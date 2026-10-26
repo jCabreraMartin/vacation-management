@@ -1,0 +1,7 @@
+{
+  "name": "bolt-maintenance",
+  "description": "Mantenimiento correctivo y fin de vida: ciclo de bugs y retirada de sistemas.",
+  "version": "0.1.0",
+  "author": { "name": "Bolt Framework" },
+  "dependencies": ["bolt-development"]
+}

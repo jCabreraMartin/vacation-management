@@ -1,0 +1,25 @@
+{
+  "chat.agentFilesLocations": {
+    "plugins/bolt-foundation/agents": true,
+    "plugins/bolt-analysis/agents": true,
+    "plugins/bolt-design/agents": true,
+    "plugins/bolt-development/agents": true,
+    "plugins/bolt-frontend/agents": true,
+    "plugins/bolt-maintenance/agents": true,
+    "plugins/bolt-operations/agents": true,
+    "plugins/bolt-release/agents": true
+  },
+  "chat.agentSkillsLocations": {
+    "plugins/bolt-foundation/skills": true,
+    "plugins/bolt-analysis/skills": true,
+    "plugins/bolt-backend/skills": true,
+    "plugins/bolt-cloud-platform/skills": true,
+    "plugins/bolt-design/skills": true,
+    "plugins/bolt-development/skills": true,
+    "plugins/bolt-frontend/skills": true,
+    "plugins/bolt-maintenance/skills": true,
+    "plugins/bolt-operations/skills": true,
+    "plugins/bolt-release/skills": true,
+    "plugins/bolt-work-management/skills": true
+  }
+}

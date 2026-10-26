@@ -1,0 +1,6 @@
+{
+  "name": "bolt-analysis",
+  "description": "Análisis funcional: specify, clarify, feature, casos de uso, user journeys, legacy y Business Agent PoC.",
+  "version": "0.1.0",
+  "author": { "name": "Bolt Framework" }
+}

@@ -1,0 +1,53 @@
+{
+  "name": "bolt-framework",
+  "owner": {
+    "name": "Bolt Framework"
+  },
+  "plugins": [
+    {
+      "name": "bolt-foundation",
+      "source": "./plugins/bolt-foundation",
+      "defaultEnabled": true
+    },
+    {
+      "name": "bolt-analysis",
+      "source": "./plugins/bolt-analysis"
+    },
+    {
+      "name": "bolt-backend",
+      "source": "./plugins/bolt-backend"
+    },
+    {
+      "name": "bolt-cloud-platform",
+      "source": "./plugins/bolt-cloud-platform"
+    },
+    {
+      "name": "bolt-design",
+      "source": "./plugins/bolt-design"
+    },
+    {
+      "name": "bolt-development",
+      "source": "./plugins/bolt-development"
+    },
+    {
+      "name": "bolt-frontend",
+      "source": "./plugins/bolt-frontend"
+    },
+    {
+      "name": "bolt-maintenance",
+      "source": "./plugins/bolt-maintenance"
+    },
+    {
+      "name": "bolt-operations",
+      "source": "./plugins/bolt-operations"
+    },
+    {
+      "name": "bolt-release",
+      "source": "./plugins/bolt-release"
+    },
+    {
+      "name": "bolt-work-management",
+      "source": "./plugins/bolt-work-management"
+    }
+  ]
+}
