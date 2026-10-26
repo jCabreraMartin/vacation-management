@@ -43,6 +43,10 @@ decisions:
       dev: true
       uat: true
       prod: true
+    deployment-triggers:
+      dev: on-commit-to-develop
+      uat: on-pr-merge
+      prod: manual-approval
   config-management: config-files
   secrets-dev: user-secrets
   feature-flags: none
@@ -69,7 +73,7 @@ decisions:
   security:
     vnet: true
     private-endpoints: true
-    waf: false
+    waf: true
     encryption-keys: azure-managed
     pii-handling: encryption
     compliance: [gdpr, hipaa]

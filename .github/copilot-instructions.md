@@ -34,9 +34,13 @@ answers your need:
 Tier 0/1 are generated from `merged-refinement.yaml` by `skill-bolt-setup-constitution` (Phase 5).
 
 <!-- BOLT:SCOPE-CARD (generated from merged-refinement.yaml — do not edit by hand) -->
-> *Scope card and `constitution.digest.md` are generated during constitution setup
-> (`skill-bolt-setup-constitution` Phase 5). Until then (fresh/template project), read the full
-> `.boltf/memory/constitution.md`.*
+**Active scopes:** backend, frontend, cloud-platform (+ work-management, transversal)
+
+- **backend:** C# / .NET 8 (LTS), full-stack green-field, Podman local orchestration
+- **frontend:** Angular
+- **cloud-platform:** Azure, Terraform (IaC), GitHub Actions CI/CD, rolling deploys, OTel → Azure observability
+
+**Naming/format:** per-scope conventions in `.boltf/memory/constitution.digest.md`; envs dev/uat/prod; coverage ≥ 80%, mutation ≥ 60%
 <!-- /BOLT:SCOPE-CARD -->
 
 ### Features (`specs/XXX-feature-name/`)
