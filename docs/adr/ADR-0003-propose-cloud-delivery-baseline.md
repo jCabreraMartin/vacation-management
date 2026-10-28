@@ -1,43 +1,47 @@
-# ADR-0003: Propose the Cloud Delivery Baseline
+# ADR-0003: Proponer la base de entrega en la nube
 
-## Status
+## Estado
 
-Proposed; resolve the branch and development-deployment trigger conflict before implementation.
+Propuesta; resolver el conflicto entre el modelo de ramas y el disparador del despliegue a desarrollo
+antes de implementar.
 
-## Context
+## Contexto
 
-The initialization wizard selected GitHub Actions, Terraform, Podman for local container
-development, OpenTelemetry to Azure, rolling deployments, GitHub Flow, and the application and
-infrastructure pipeline stages. It also selected a dev deployment on commits to `develop`, UAT on
-PR merge, and production with manual approval.
+El asistente de inicialización seleccionó GitHub Actions, Terraform, Podman para el desarrollo local
+con contenedores, OpenTelemetry hacia Azure, despliegues rolling, GitHub Flow y las fases de pipeline
+de aplicación e infraestructura. También seleccionó el despliegue a desarrollo en commits a
+`develop`, a UAT al fusionar un PR y a producción con aprobación manual.
 
-## Decision
+## Decisión
 
-Record GitHub Actions, Terraform, Podman local development, OpenTelemetry to Azure, rolling
-deployments, and GitHub Flow as the selected baseline. Keep dev deployment behavior proposed until
-the conflict between commits to `develop` and GitHub Flow's `feature/*` to `main` model is resolved.
+Registrar GitHub Actions, Terraform, Podman para desarrollo local, OpenTelemetry hacia Azure,
+despliegues rolling y GitHub Flow como base seleccionada. Mantener como propuesta el comportamiento
+del despliegue a desarrollo hasta resolver el conflicto entre hacer commits a `develop` y el modelo
+GitHub Flow de `feature/*` hacia `main`.
 
-The wizard selected 80% unit-test coverage and a 60% mutation score. It also selected VNet, Private
-Endpoints, WAF, Azure-managed encryption keys, PII encryption, GDPR, and HIPAA. These selections do
-not establish that the compliance requirements apply or that the controls are implemented.
+El asistente seleccionó una cobertura de pruebas unitarias del 80 % y una puntuación de mutación del
+60 %. También seleccionó VNet, Private Endpoints, WAF, claves de cifrado administradas por Azure,
+cifrado de PII, GDPR e HIPAA. Estas selecciones no establecen que los requisitos de cumplimiento sean
+aplicables ni que los controles estén implementados.
 
-## Rationale
+## Justificación
 
-The wizard selections are the only recorded evidence. It did not capture project-specific
-comparisons, cloud constraints, compliance applicability, or why these options were preferred.
-This ADR therefore records the selections and outstanding questions rather than asserting a
-technical justification.
+Las selecciones del asistente son la única evidencia registrada. No recogió comparaciones específicas
+del proyecto, restricciones de nube, aplicabilidad de cumplimiento ni los motivos para preferir estas
+opciones. Por tanto, este ADR registra las selecciones y preguntas pendientes, sin afirmar una
+justificación técnica.
 
-## Alternatives Considered
+## Alternativas consideradas
 
-The wizard offered alternative pipeline providers, IaC tools, observability approaches, deployment
-strategies, and branch models. The lab records the selected options but not the reasons for rejecting
-the alternatives.
+El asistente ofrecía proveedores de pipeline, herramientas IaC, enfoques de observabilidad,
+estrategias de despliegue y modelos de ramas alternativos. El laboratorio registra las opciones
+seleccionadas, pero no los motivos para descartar las alternativas.
 
-## Consequences
+## Consecuencias
 
-- The listed tooling and pipeline stages can guide planning, but implementation must wait on the
-  dev trigger and branch-model resolution.
-- The project owner must confirm whether GDPR and HIPAA apply and define the required control
-  evidence before claiming compliance.
-- Infrastructure and security policy selections are requirements, not proof of deployed controls.
+- Las herramientas y fases de pipeline indicadas pueden orientar la planificación, pero la
+  implementación debe esperar a que se resuelva el disparador de desarrollo y el modelo de ramas.
+- La persona responsable del proyecto debe confirmar si GDPR e HIPAA son aplicables y definir la
+  evidencia de control necesaria antes de afirmar cumplimiento.
+- Las selecciones de infraestructura y políticas de seguridad son requisitos, no pruebas de que los
+  controles estén desplegados.

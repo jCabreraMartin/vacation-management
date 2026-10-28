@@ -1,35 +1,36 @@
-# Constitution Refinement Report
+# Informe de refinamiento de la constitución
 
-**Generated**: 2026-10-26 13:33:32
+**Generado**: 2026-10-26 13:33:32
 
-## Summary
+## Resumen
 
-- **Total Scopes Processed**: 3
-- **Total Articles Reviewed**: 43
-- **Articles Included**: 43
-- **Articles Excluded**: 0
-- **Inclusion Rate**: 100%
-- **Conflicts Detected**: 0 (common articles are kept per scope)
-- **Refinement mode**: auto-include (no per-article review)
+- **Ámbitos procesados**: 3
+- **Artículos revisados**: 43
+- **Artículos incluidos**: 43
+- **Artículos excluidos**: 0
+- **Porcentaje de inclusión**: 100 %
+- **Conflictos detectados**: 0 (los artículos comunes se mantienen por ámbito)
+- **Modo de refinamiento**: inclusión automática (sin revisión artículo por artículo)
 
-> Auto-inclusion records article presence, not stakeholder ratification. Only decisions explicitly
-> selected in the initialization wizard and listed in the Constitution's approved-decision summary
-> are binding; all other template options remain pending.
+> La inclusión automática registra la presencia de artículos, no su ratificación por las partes
+> interesadas. Solo son vinculantes las decisiones seleccionadas explícitamente en el asistente de
+> inicialización y enumeradas en el resumen de decisiones aprobadas de la Constitución; las demás
+> opciones de plantilla siguen pendientes.
 
-## Per-Scope Breakdown
+## Desglose por ámbito
 
-- **backend**: 17/17 articles included
-- **frontend**: 11/11 articles included
-- **cloud-platform**: 15/15 articles included
+- **backend**: 17/17 artículos incluidos
+- **frontend**: 11/11 artículos incluidos
+- **cloud-platform**: 15/15 artículos incluidos
 
-## Final Constitution
+## Constitución final
 
-- **File**: .boltf/memory/constitution.md (2823 lines)
-- **Digest**: .boltf/memory/constitution.digest.md
-- **Backup of previous version**: .boltf/memory/constitution.backup-20261026.md
+- **Archivo**: `.boltf/memory/constitution.md` (2823 líneas)
+- **Resumen**: `.boltf/memory/constitution.digest.md`
+- **Copia de seguridad de la versión anterior**: `.boltf/memory/constitution.backup-20261026.md`
 
-## Next Steps
+## Próximos pasos
 
-1. Review the constitution; unchecked template options remain undecided
-2. Run `@Bolt Provisioner` to download resources
-3. Commit constitution to version control
+1. Revisar la constitución; las opciones de plantilla sin marcar siguen sin decidirse.
+2. Ejecutar `@Bolt Provisioner` para descargar recursos.
+3. Incorporar la constitución al control de versiones.

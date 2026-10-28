@@ -1,33 +1,34 @@
-# Project Constitution (Initial)
+# Constitución del proyecto (inicial)
 
-> **Generated**: 2026-10-26 13:21:06
-> **Practice**: Apps & Infra
-> **Active Scopes**: backend, frontend, cloud-platform
-> **Project Type**: full-stack (green)
-> **Backend Stack Template**: dotnet-8
+> **Generada**: 2026-10-26 13:21:06
+> **Práctica**: Apps e Infraestructura
+> **Ámbitos activos**: backend, frontend, cloud-platform
+> **Tipo de proyecto**: full-stack (greenfield)
+> **Plantilla de backend**: dotnet-8
 
 ---
 
-# Final Constitution
+# Constitución final
 
-Only decisions listed below are approved by the initialization wizard. Unchecked options,
-recommended defaults, and architecture examples in the scope articles are informative and are
-not binding decisions. Items not listed remain pending.
+Solo las decisiones enumeradas a continuación están aprobadas por el asistente de inicialización.
+Las opciones sin marcar, los valores recomendados por defecto y los ejemplos de arquitectura de los
+ámbitos son informativos, no vinculantes. Los elementos no incluidos siguen pendientes.
 
-## Approved Initialization Decisions
+## Decisiones aprobadas durante la inicialización
 
-- Project: greenfield, full-stack; active scopes: backend, frontend, cloud-platform; work management: GitHub Projects.
-- Backend: C# / .NET 8. Frontend: Angular (version not specified).
-- Local development: Podman; configuration: appsettings / .env files; local secrets: .NET User Secrets; feature flags: none.
-- Environments: dev, uat, prod; pre is disabled. CI/CD: GitHub Actions; IaC: Terraform; deployment strategy: rolling; branch strategy: GitHub Flow.
-- Application and infrastructure pipeline stages: all selected. Thresholds: 80% unit-test coverage and 60% mutation score.
-- Observability: OpenTelemetry to Azure; infrastructure monitoring: Resource Health and Activity Logs.
-- Security: VNet, Private Endpoints, and WAF enabled; Azure-managed encryption keys; PII encrypted; GDPR and HIPAA selected in the wizard.
-- Deployment triggers from the wizard: dev on commit to `develop`, UAT on PR merge, prod with manual approval. The dev trigger conflicts with GitHub Flow and requires confirmation before implementation.
-- Architecture style, API style, database, identity provider, authorization model, and other unchecked choices remain undecided.
+ - Proyecto greenfield y full-stack; ámbitos activos: backend, frontend y cloud-platform; gestión del trabajo: GitHub Projects.
+ - Backend: C# / .NET 8. Frontend: Angular (versión no especificada).
+ - Desarrollo local: Podman; configuración: appsettings / archivos .env; secretos locales: .NET User Secrets; sin feature flags.
+ - Entornos: dev, uat y prod; pre está deshabilitado. CI/CD: GitHub Actions; IaC: Terraform; despliegue rolling; ramas: GitHub Flow.
+ - Se seleccionaron todas las fases de pipeline de aplicación e infraestructura. Umbrales: 80 % de cobertura de pruebas unitarias y 60 % de mutación.
+ - Observabilidad: OpenTelemetry hacia Azure; monitorización de infraestructura: Resource Health y Activity Logs.
+ - Seguridad: VNet, Private Endpoints y WAF habilitados; claves de cifrado administradas por Azure; PII cifrada; GDPR e HIPAA seleccionados en el asistente.
+ - Triggers indicados por el asistente: dev al hacer commit en `develop`, UAT al fusionar un PR y prod con aprobación manual. El trigger de dev contradice GitHub Flow y debe confirmarse antes de implementarlo.
+ - El estilo de arquitectura y API, la base de datos, el proveedor de identidad, el modelo de autorización y las demás opciones sin marcar siguen sin decidirse.
 
-Article XIX is generic guidance, not a binding project rule, until the project defines and approves
-the responsible roles, signatories, amendment process, and auditable mechanism.
+El artículo XIX es una guía genérica, no una regla vinculante del proyecto, hasta que se definan y
+aprueben las personas responsables, las firmas autorizadas, el proceso de modificación y el
+mecanismo de auditoría.
 
 # Scope: backend
 

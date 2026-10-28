@@ -1,21 +1,20 @@
-# Constitution Digest
+# Resumen de la constitución
 
-> Generated from `merged-refinement.yaml` (2026-10-26 12:32:37). Active scopes: backend, frontend, cloud-platform.
-> Canonical source: `.boltf/memory/constitution.md` — read it for governance/amendments or details omitted here.
-> The approved initialization decisions below are authoritative. The generated scope content may
-> still contain unrefined template alternatives; those are not binding.
+> Generado desde `merged-refinement.yaml` (2026-10-26 12:32:37). Ámbitos activos: backend, frontend y cloud-platform.
+> Fuente canónica: `.boltf/memory/constitution.md`; consúltala para gobernanza, modificaciones o detalles omitidos aquí.
+> Las decisiones aprobadas durante la inicialización que figuran a continuación son vinculantes. El contenido generado para cada ámbito puede conservar alternativas de plantilla sin refinar; no son vinculantes.
 
-## Approved Initialization Decisions
+## Decisiones aprobadas durante la inicialización
 
-- Project: greenfield, full-stack; scopes: backend, frontend, cloud-platform; work management: GitHub Projects.
-- Backend: C# / .NET 8. Frontend: Angular (version not specified). Local development: Podman.
-- Environments: dev, uat, prod; pre disabled. Config files and User Secrets; no feature flags.
-- GitHub Actions; Terraform; rolling deployments; GitHub Flow; all selected application and infrastructure pipeline stages.
-- Thresholds: 80% unit-test coverage and 60% mutation score.
-- OpenTelemetry to Azure; Resource Health and Activity Logs.
-- VNet, Private Endpoints, WAF, Azure-managed keys, and PII encryption; GDPR and HIPAA selected in the wizard.
-- Wizard deployment triggers: dev on commit to `develop`, UAT on PR merge, prod with manual approval. The dev trigger conflicts with GitHub Flow; confirm before implementation.
-- Architecture style, API style, database, identity provider, and authorization model remain undecided.
+- Proyecto greenfield y full-stack; ámbitos: backend, frontend y cloud-platform; gestión del trabajo: GitHub Projects.
+- Backend: C# / .NET 8. Frontend: Angular (versión no especificada). Desarrollo local: Podman.
+- Entornos: dev, uat y prod; pre deshabilitado. Archivos de configuración y User Secrets; sin feature flags.
+- GitHub Actions; Terraform; despliegues rolling; GitHub Flow; todas las fases seleccionadas para los pipelines de aplicación e infraestructura.
+- Umbrales: 80 % de cobertura unitaria y 60 % de puntuación de mutación.
+- OpenTelemetry hacia Azure; Resource Health y Activity Logs.
+- VNet, Private Endpoints, WAF, claves administradas por Azure y cifrado de PII; GDPR e HIPAA seleccionados en el asistente.
+- Triggers del asistente: dev al hacer commit en `develop`, UAT al fusionar un PR y prod con aprobación manual. El trigger de dev contradice GitHub Flow; confirmarlo antes de implementarlo.
+- El estilo de arquitectura y API, la base de datos, el proveedor de identidad y el modelo de autorización siguen sin decidirse.
 
 ## backend
 

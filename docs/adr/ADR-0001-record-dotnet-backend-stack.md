@@ -1,35 +1,40 @@
-# ADR-0001: Record the .NET Backend Stack Selection
+# ADR-0001: Registrar la selección de .NET para el backend
 
-## Status
+## Estado
 
-Accepted (selected in the initialization wizard; project-specific rationale remains undocumented)
+Aceptada (seleccionada en el asistente de inicialización; la justificación específica del proyecto
+sigue sin documentarse).
 
-## Context
+## Contexto
 
-The greenfield initialization wizard selected the .NET 8 backend template for the full-stack
-project. It did not record a project-specific comparison of backend frameworks or runtime needs.
+El asistente de inicialización greenfield seleccionó la plantilla de backend de .NET 8 para el
+proyecto full-stack. No registró una comparación específica del proyecto entre frameworks backend ni
+las necesidades de runtime.
 
-## Decision
+## Decisión
 
-Use C# on .NET 8 (LTS) as the backend runtime, as recorded in `.boltf/scopes.yaml`.
+Usar C# sobre .NET 8 (LTS) como runtime del backend, según consta en `.boltf/scopes.yaml`.
 
-This decision does not select an API style, architecture style, database, data-access technology,
-identity provider, or authorization model. Those remain undecided.
+Esta decisión no selecciona un estilo de API o arquitectura, una base de datos, una tecnología de
+acceso a datos, un proveedor de identidad ni un modelo de autorización. Esas decisiones siguen
+pendientes.
 
-## Rationale
+## Justificación
 
-The available evidence is the explicit wizard selection and the template lock to .NET 8. No further
-business or technical rationale was captured, so this ADR records the outcome without claiming the
-selection is superior to the alternatives.
+La evidencia disponible es la selección explícita del asistente y el bloqueo de la plantilla en
+.NET 8. No se recogió ninguna justificación adicional de negocio o técnica; por ello, este ADR
+registra el resultado sin afirmar que la selección sea superior a las alternativas.
 
-## Alternatives Considered
+## Alternativas consideradas
 
-The wizard also offered Go, Node.js/NestJS, Python/FastAPI, and a custom backend template. The lab
-records .NET 8 as selected but does not record reasons for not selecting the alternatives.
+El asistente también ofrecía Go, Node.js/NestJS, Python/FastAPI y una plantilla de backend
+personalizada. El laboratorio registra .NET 8 como opción seleccionada, pero no documenta los motivos
+para descartar las alternativas.
 
-## Consequences
+## Consecuencias
 
-- Backend implementation and tooling must target .NET 8 until this ADR is superseded.
-- API style, persistence, authentication, and architecture decisions must be made separately.
-- The project owner should add the requirements that motivated this selection if a comparative
-  rationale is required.
+- La implementación y las herramientas del backend deben orientarse a .NET 8 hasta que este ADR sea
+  sustituido.
+- El estilo de API, la persistencia, la autenticación y la arquitectura deben decidirse por separado.
+- Si se requiere una justificación comparativa, la persona responsable del proyecto debe añadir los
+  requisitos que motivaron esta selección.

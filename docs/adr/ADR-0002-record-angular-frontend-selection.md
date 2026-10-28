@@ -1,32 +1,36 @@
-# ADR-0002: Record the Angular Frontend Selection
+# ADR-0002: Registrar la selección de Angular para el frontend
 
-## Status
+## Estado
 
-Accepted (selected in the initialization wizard; framework version remains unspecified)
+Aceptada (seleccionada en el asistente de inicialización; la versión del framework sigue sin
+especificarse).
 
-## Context
+## Contexto
 
-The greenfield initialization wizard selected Angular for the frontend. It did not ask for or
-record a major version, nor did it capture a project-specific comparison of frontend frameworks.
+El asistente de inicialización greenfield seleccionó Angular para el frontend. No preguntó ni
+registró una versión principal, ni recogió una comparación específica del proyecto entre frameworks
+frontend.
 
-## Decision
+## Decisión
 
-Use Angular for the frontend. The framework version is not selected by the available lab evidence
-and must be confirmed before scaffolding or dependency installation.
+Usar Angular para el frontend. La evidencia disponible del laboratorio no selecciona la versión del
+framework; esta debe confirmarse antes de generar la estructura o instalar dependencias.
 
-## Rationale
+## Justificación
 
-The wizard explicitly records Angular as the selected framework. No additional business or
-technical rationale was captured, so this ADR records the outcome without inventing comparative
-advantages.
+El asistente registra explícitamente Angular como framework seleccionado. No se recogió ninguna
+justificación adicional de negocio o técnica; por ello, este ADR registra el resultado sin inventar
+ventajas comparativas.
 
-## Alternatives Considered
+## Alternativas consideradas
 
-The wizard offered React, Vue.js, and no or multiple frontend frameworks. The lab records Angular
-as selected but does not record reasons for not selecting the alternatives.
+El asistente ofrecía React, Vue.js y la opción de no usar framework frontend o usar varios. El
+laboratorio registra Angular como opción seleccionada, pero no documenta los motivos para descartar
+las alternativas.
 
-## Consequences
+## Consecuencias
 
-- Frontend instructions and scaffolding should target Angular after its version is confirmed.
-- The project owner should document the requirements that motivated Angular if a comparative
-  rationale is required.
+- Las instrucciones y la estructura inicial del frontend deben orientarse a Angular cuando se
+  confirme su versión.
+- Si se requiere una justificación comparativa, la persona responsable del proyecto debe documentar
+  los requisitos que motivaron la selección de Angular.

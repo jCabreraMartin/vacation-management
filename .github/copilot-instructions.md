@@ -13,10 +13,14 @@ Bolt Framework (AI-Driven Development Lifecycle) is an AI-powered software devel
 5. **PRODUCTION** - Operations and continuous improvement
 6. **RETIREMENT** - Decommissioning and archival
 
-## Interaction Language
+## Idioma de interacción y documentación
 
-Agent interaction and generated documentation use the **project's configured language**
-(set it in the constitution / `CLAUDE.md`). The framework does not impose a language.
+La documentación nueva o modificada propia de este proyecto debe redactarse en español de España,
+independientemente del idioma del prompt. Mantén en su idioma original las fuentes de evidencia de
+`origin/`; si se necesita una traducción, crea un documento derivado en español y conserva la
+trazabilidad con la fuente. No traduzcas identificadores, nombres de tecnología, código ni citas que
+deban permanecer literales. No inventes datos para completar contenido ausente: registra las dudas
+como preguntas abiertas.
 
 ## Key Concepts
 
