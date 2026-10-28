@@ -1,0 +1,39 @@
+---
+config:
+  theme: base
+  look: classic
+  themeVariables:
+    primaryColor: "#e6f4f1"
+    primaryTextColor: "#18332d"
+    primaryBorderColor: "#52796f"
+    lineColor: "#5c6770"
+    secondaryColor: "#f1f3f5"
+    tertiaryColor: "#fff4e5"
+    background: "#ffffff"
+    fontSize: "14px"
+---
+classDiagram
+    class Empleado
+    class ResponsableAprobador
+    class SolicitudVacaciones {
+      fechaInicial
+      fechaFinal
+      comentarioOpcional
+      estado
+    }
+    class EstadoSolicitud {
+        <<enumeration>>
+        Pendiente
+        Aprobada
+        Rechazada
+        Retirada
+    }
+
+    Empleado --> SolicitudVacaciones : presenta, consulta propias y puede retirar pendientes
+    Empleado -- ResponsableAprobador : asignacion mencionada, cardinalidad no definida
+    ResponsableAprobador --> SolicitudVacaciones : consulta, aprueba o rechaza pendientes asignadas
+    SolicitudVacaciones --> EstadoSolicitud : estado actual
+
+    note for Empleado "Rol de actor; no se modela como entidad persistente."
+    note for ResponsableAprobador "Rol de actor; no se modela como entidad persistente."
+    note for SolicitudVacaciones "Solicitud de vacaciones. Identidad, tipos de datos, igualdad y atributos adicionales no definidos. Agregado o entidad no confirmados."
