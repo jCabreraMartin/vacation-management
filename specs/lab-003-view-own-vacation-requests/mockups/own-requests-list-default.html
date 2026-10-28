@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>LAB-F003 — Solicitudes propias — Lista — Default</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="min-h-screen bg-zinc-50 text-zinc-900 antialiased">
+    <header class="border-b border-amber-300 bg-amber-50 px-4 py-3 text-sm text-amber-950">
+      <p><strong>Mockup ·</strong> Feature: <code>LAB-F003</code> · Flujo: <code>consultar-solicitudes-propias</code> · Paso: <code>lista</code> · Estado: <code>default</code></p>
+      <p class="mt-1">Asunciones: hay al menos una solicitud propia; los datos visibles son placeholders ilustrativos, no establecen orden ni campos adicionales. Optimizado para móvil; adaptable a tablet y escritorio.</p>
+    </header>
+    <main class="mx-auto w-full max-w-4xl px-4 py-8 sm:px-6 lg:py-12">
+      <section>
+        <p class="text-sm font-medium text-zinc-600">Mis solicitudes</p>
+        <h1 class="mt-2 text-2xl font-semibold text-zinc-950">Solicitudes de vacaciones</h1>
+        <p class="mt-2 text-sm leading-6 text-zinc-700">Consulta las solicitudes registradas y su estado actual.</p>
+
+        <ul class="mt-6 space-y-3" aria-label="Solicitudes propias">
+          <li class="border border-zinc-300 bg-white p-4 sm:p-5">
+            <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+              <div>
+                <h2 class="text-base font-semibold text-zinc-950">Solicitud <span class="font-normal text-zinc-600">[dato ilustrativo]</span></h2>
+                <!-- TODO(content): confirmar qué campos de fecha se muestran en el resumen de lista. -->
+                <p class="mt-3 text-sm text-zinc-700">Fecha inicial: <span class="text-zinc-600">[fecha ilustrativa]</span></p>
+                <p class="mt-1 text-sm text-zinc-700">Fecha final: <span class="text-zinc-600">[fecha ilustrativa]</span></p>
+              </div>
+              <p class="inline-flex w-fit border border-zinc-400 bg-zinc-100 px-3 py-1 text-sm font-medium text-zinc-800">Estado: Pendiente</p>
+            </div>
+            <button type="button" class="mt-4 min-h-11 border border-zinc-700 px-4 py-2 text-sm font-semibold text-zinc-900">Ver detalle</button>
+          </li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>

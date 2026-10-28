@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>LAB-F001 — Presentar solicitud — Paso 1 — Error: falta fecha inicial</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="min-h-screen bg-zinc-50 text-zinc-900 antialiased">
+    <header class="border-b border-amber-300 bg-amber-50 px-4 py-3 text-sm text-amber-950">
+      <p><strong>Mockup ·</strong> Feature: <code>LAB-F001</code> · Flujo: <code>presentar-solicitud</code> · Paso: <code>step1</code> · Estado: <code>error</code></p>
+      <p class="mt-1">Asunciones: se representa FR-006 con fecha inicial ausente; no se define el texto exacto del error. Optimizado para móvil; adaptable a tablet y escritorio.</p>
+    </header>
+    <main class="mx-auto w-full max-w-3xl px-4 py-8 sm:px-6 lg:py-12">
+      <section class="border border-zinc-300 bg-white p-5 sm:p-8">
+        <p class="text-sm font-medium text-zinc-600">Solicitud de vacaciones</p>
+        <h1 class="mt-2 text-2xl font-semibold tracking-normal text-zinc-950">Presentar solicitud</h1>
+        <div role="alert" class="mt-6 border border-red-800 bg-red-50 p-4 text-sm text-red-950">
+          <p class="font-semibold">Error de validación</p>
+          <!-- TODO(content): definir con negocio el mensaje comprensible para la fecha inicial ausente. -->
+          <p class="mt-1">[Mensaje de validación pendiente de definir]</p>
+        </div>
+        <form class="mt-6 space-y-6" aria-label="Formulario de solicitud de vacaciones">
+          <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
+            <div>
+              <label for="start-date" class="block text-sm font-medium text-zinc-900">Fecha inicial <span class="text-zinc-600">(obligatoria)</span></label>
+              <input id="start-date" name="start-date" type="date" aria-required="true" aria-invalid="true" aria-describedby="start-error" class="mt-2 block min-h-11 w-full border-2 border-red-800 bg-white px-3 text-base text-zinc-900" />
+              <p id="start-error" class="mt-2 text-sm font-medium text-red-900">[Detalle de validación pendiente]</p>
+            </div>
+            <div>
+              <label for="end-date" class="block text-sm font-medium text-zinc-900">Fecha final <span class="text-zinc-600">(obligatoria)</span></label>
+              <input id="end-date" name="end-date" type="date" aria-required="true" class="mt-2 block min-h-11 w-full border border-zinc-400 bg-white px-3 text-base text-zinc-900" />
+            </div>
+          </div>
+          <div>
+            <label for="comment" class="block text-sm font-medium text-zinc-900">Comentario <span class="text-zinc-600">(opcional)</span></label>
+            <textarea id="comment" name="comment" rows="4" class="mt-2 block w-full resize-y border border-zinc-400 bg-white px-3 py-2 text-base text-zinc-900"></textarea>
+          </div>
+          <div class="border-t border-zinc-200 pt-5">
+            <button type="button" class="min-h-11 w-full border border-zinc-900 bg-zinc-900 px-5 py-2 text-sm font-semibold text-white sm:w-auto">Enviar solicitud</button>
+          </div>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
