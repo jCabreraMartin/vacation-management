@@ -22,9 +22,9 @@ articles:
 
       Select ONE:
 
-      - [ ] **Vue.js** - Version: [ ] 3.x
+      - [x] **Vue.js** - Versión no especificada por las fuentes del cliente (ADR-0004)
       - [ ] **React** - Version: [ ] 18.x [ ] 19.x
-      - [x] **Angular** - Version not specified in the wizard
+      - [ ] **Angular** - Seleccionado inicialmente en el asistente; sustituido por Vue.js (ADR-0004)
       - [ ] **Blazor** - Type: [ ] Server [ ] WebAssembly [ ] Hybrid
       - [ ] **None** - API only (headless)
 

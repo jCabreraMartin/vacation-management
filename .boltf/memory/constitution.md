@@ -17,7 +17,7 @@ Las opciones sin marcar, los valores recomendados por defecto y los ejemplos de 
 ## Decisiones aprobadas durante la inicialización
 
  - Proyecto greenfield y full-stack; ámbitos activos: backend, frontend y cloud-platform; gestión del trabajo: GitHub Projects.
- - Backend: C# / .NET 8. Frontend: Angular (versión no especificada).
+ - Backend: C# / .NET 8. Frontend: Vue.js (versión no especificada; sustituye a Angular según [ADR-0004](../../docs/adr/ADR-0004-replace-angular-with-vue-frontend.md), 2026-10-29).
  - Desarrollo local: Podman; configuración: appsettings / archivos .env; secretos locales: .NET User Secrets; sin feature flags.
  - Entornos: dev, uat y prod; pre está deshabilitado. CI/CD: GitHub Actions; IaC: Terraform; despliegue rolling; ramas: GitHub Flow.
  - Se seleccionaron todas las fases de pipeline de aplicación e infraestructura. Umbrales: 80 % de cobertura de pruebas unitarias y 60 % de mutación.
@@ -1037,9 +1037,9 @@ All AI agents operating in this project MUST:
 
 Select ONE:
 
-- [ ] **Vue.js** - Version: [ ] 3.x
+- [x] **Vue.js** - Versión no especificada por las fuentes del cliente (ADR-0004)
 - [ ] **React** - Version: [ ] 18.x [ ] 19.x
-- [x] **Angular** - Version not specified in the wizard
+- [ ] **Angular** - Seleccionado inicialmente en el asistente; sustituido por Vue.js (ADR-0004)
 - [ ] **Blazor** - Type: [ ] Server [ ] WebAssembly [ ] Hybrid
 - [ ] **None** - API only (headless)
 

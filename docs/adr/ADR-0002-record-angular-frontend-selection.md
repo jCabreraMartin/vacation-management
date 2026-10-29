@@ -2,7 +2,8 @@
 
 ## Estado
 
-Aceptada (seleccionada en el asistente de inicialización; la versión del framework sigue sin
+Sustituida por [ADR-0004](ADR-0004-replace-angular-with-vue-frontend.md) el 2026-10-29. Originalmente
+aceptada (seleccionada en el asistente de inicialización; la versión del framework sigue sin
 especificarse).
 
 ## Contexto

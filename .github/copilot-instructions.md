@@ -41,7 +41,7 @@ Tier 0/1 are generated from `merged-refinement.yaml` by `skill-bolt-setup-consti
 **Active scopes:** backend, frontend, cloud-platform (+ work-management, transversal)
 
 - **backend:** C# / .NET 8 (LTS), full-stack green-field, Podman local orchestration
-- **frontend:** Angular
+- **frontend:** Vue.js
 - **cloud-platform:** Azure, Terraform (IaC), GitHub Actions CI/CD, rolling deploys, OTel → Azure observability
 
 **Naming/format:** per-scope conventions in `.boltf/memory/constitution.digest.md`; envs dev/uat/prod; coverage ≥ 80%, mutation ≥ 60%

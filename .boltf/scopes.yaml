@@ -18,7 +18,7 @@ project:
 
   # Development Environment (Step 1.6)
   local-orchestration: podman     # docker-compose | kubernetes | podman | aspire | none
-  frontend-framework: angular       # react | angular | vue | none
+  frontend-framework: vue       # react | angular | vue | none (ADR-0004, antes angular)
   cloud-dev-environment: none  # codespaces | devcontainers | both | none
   container-runtime: podman         # docker | podman | none
 

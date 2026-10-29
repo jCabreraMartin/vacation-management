@@ -7,5 +7,6 @@ recogió una justificación específica del proyecto, se indica esa carencia en 
 | ADR | Título | Estado |
 | --- | --- | --- |
 | [ADR-0001](ADR-0001-record-dotnet-backend-stack.md) | Registrar la selección de .NET para el backend | Aceptada |
-| [ADR-0002](ADR-0002-record-angular-frontend-selection.md) | Registrar la selección de Angular para el frontend | Aceptada |
+| [ADR-0002](ADR-0002-record-angular-frontend-selection.md) | Registrar la selección de Angular para el frontend | Sustituida por ADR-0004 |
 | [ADR-0003](ADR-0003-propose-cloud-delivery-baseline.md) | Proponer la base de entrega en la nube | Propuesta |
+| [ADR-0004](ADR-0004-replace-angular-with-vue-frontend.md) | Sustituir Angular por Vue.js en el frontend | Aceptada |

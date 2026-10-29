@@ -7,7 +7,7 @@
 ## Decisiones aprobadas durante la inicialización
 
 - Proyecto greenfield y full-stack; ámbitos: backend, frontend y cloud-platform; gestión del trabajo: GitHub Projects.
-- Backend: C# / .NET 8. Frontend: Angular (versión no especificada). Desarrollo local: Podman.
+- Backend: C# / .NET 8. Frontend: Vue.js (versión no especificada; sustituye a Angular, ADR-0004). Desarrollo local: Podman.
 - Entornos: dev, uat y prod; pre deshabilitado. Archivos de configuración y User Secrets; sin feature flags.
 - GitHub Actions; Terraform; despliegues rolling; GitHub Flow; todas las fases seleccionadas para los pipelines de aplicación e infraestructura.
 - Umbrales: 80 % de cobertura unitaria y 60 % de puntuación de mutación.
