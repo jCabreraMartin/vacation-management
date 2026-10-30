@@ -1,0 +1,35 @@
+%% [C] decisión de constitución/ADR; [R] fuente funcional Draft; [O] ambigüedad/pendiente.
+%% Los nodos son responsabilidades lógicas; no representan servicios desplegables ni contratos.
+flowchart LR
+    subgraph APP[Aplicación de gestión de vacaciones - límites lógicos Draft]
+        WEB[Frontend Vue.js<br/>decisión registrada; versión TBD]
+        BACK[Backend C#/.NET 8<br/>runtime registrado]
+        QUERY[Consultas y recuentos<br/>alcance/fórmula TBD]
+        REQUEST[Solicitud y decisiones<br/>reglas/modelo TBD; alta sin BL-FR específico]
+        ORG[Integración organizativa<br/>fuente de pertenencia TBD]
+        OUT[Exportaciones y avisos<br/>contratos/eventos TBD]
+        DATA[Datos de solicitudes<br/>persistencia y propiedad TBD]
+        TEMP[Procesamiento temporal<br/>descarga nocturna/alarmas citadas; mecanismo/plazo TBD]
+        WEB -->|protocolo/contrato TBD| BACK
+        BACK -->|consulta; alcance TBD| QUERY
+        BACK -->|decisión; reglas TBD| REQUEST
+        BACK -.->|frontera propuesta| ORG
+        BACK -.->|frontera propuesta| OUT
+        QUERY -.->|datos/fórmula TBD| DATA
+        REQUEST -.->|registro TBD| DATA
+        OUT -.->|lectura de aprobadas; contrato TBD| DATA
+        BACK -.->|responsabilidad citada; mecanismo TBD| TEMP
+    end
+
+    AD[Active Directory<br/>alcance organizativo citado]
+    SN[ServiceNow<br/>entrada en conflicto y salida citada]
+    EMAIL[Correo<br/>canal priorizado; eventos TBD]
+    TEAMS[Teams<br/>opcional; alcance TBD]
+    AZURE[Azure<br/>destino OTel seleccionado]
+
+    AD -.->|información organizativa; atributos TBD| ORG
+    SN -.->|pertenencia RF-036; contradicción RF-037| ORG
+    OUT -.->|solo aprobadas RF-021/022/023| SN
+    OUT -.->|notificaciones RF-017/018/027/029/032; matriz TBD| EMAIL
+    OUT -.->|opcional RF-028; condiciones TBD| TEAMS
+    BACK -.->|OpenTelemetry [C]| AZURE
