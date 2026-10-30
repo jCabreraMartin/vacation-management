@@ -1,0 +1,7 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\VacationManagement.Domain\VacationManagement.Domain.csproj" />
+    <ProjectReference Include="..\..\src\VacationManagement.Application\VacationManagement.Application.csproj" />
+    <ProjectReference Include="..\..\src\VacationManagement.Infrastructure\VacationManagement.Infrastructure.csproj" />
+  </ItemGroup>
+</Project>
