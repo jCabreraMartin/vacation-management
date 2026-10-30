@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="..\VacationManagement.Application\VacationManagement.Application.csproj" />
+  </ItemGroup>
+</Project>

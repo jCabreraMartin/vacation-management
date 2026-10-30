@@ -1,0 +1,24 @@
+%% [C] decisión de constitución/ADR; [R] fuente funcional Draft; [O] ambigüedad/pendiente.
+%% Las relaciones etiquetadas [R/O] reflejan evidencia sin aprobación; no son contratos ni permisos.
+C4Context
+    title Contexto funcional y técnico citado (Draft)
+
+    Person(employee, "Usuario / empleado", "Solicita y consulta según alcance pendiente [R]")
+    Person(projectLead, "Responsable de proyecto", "Consulta, aprueba/rechaza y puede delegar [R]")
+    Person(departmentLead, "Responsable departamental", "Aprueba, consulta recuentos y recibe alarmas [R]")
+    System(vacation, "Gestión de vacaciones", "Aplicación departamental solicitada; requisitos Draft [R]")
+    System_Ext(ad, "Active Directory", "Información organizativa; alcance/atributos pendientes [R/O]")
+    System_Ext(serviceNow, "ServiceNow", "Pertenencia departamental en conflicto y destino de aprobadas [R/O]")
+    System_Ext(email, "Correo electrónico", "Canal priorizado; matriz de eventos pendiente [R/O]")
+    System_Ext(teams, "Microsoft Teams", "Canal opcional; etapa y eventos pendientes [R/O]")
+    System_Ext(azureObs, "Azure - observabilidad", "Destino OpenTelemetry seleccionado [C]")
+
+    Rel(employee, vacation, "Solicita / consulta / cancela; alta y alcance por aclarar [R/O]")
+    Rel(projectLead, vacation, "Consulta / aprueba / rechaza / delega; flujo por aclarar [R/O]")
+    Rel(departmentLead, vacation, "Aprueba / consulta / recibe alarma; reglas por aclarar [R/O]")
+    Rel(ad, vacation, "Información organizativa; relación exacta pendiente [R/O]")
+    Rel(serviceNow, vacation, "Pertenencia departamental atribuida por RF-036 [R/O]")
+    Rel(vacation, serviceNow, "Exporta solo aprobadas tras aprobaciones requeridas [R/O]")
+    Rel(vacation, email, "Avisos citados; eventos/destinatarios/canal por aclarar [R/O]")
+    Rel(vacation, teams, "Avisos opcionales citados; condiciones por aclarar [R/O]")
+    Rel(vacation, azureObs, "OpenTelemetry hacia Azure [C]")
